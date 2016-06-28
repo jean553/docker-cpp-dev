@@ -1,0 +1,49 @@
+---
+- hosts: localhost
+  become: true
+
+  tasks:
+
+    - name: install clang and SFML
+      apt:
+        name="{{ item }}"
+        state=present
+        update_cache=yes
+      with_items:
+        - clang
+        - libsfml-dev
+        - vim
+        - zsh
+        - wget
+        - git
+        - curl
+        - vim-syntastic
+        - libc++-dev
+
+    - name: Clone oh-my-zsh repo
+      git:
+        repo=git://github.com/robbyrussell/oh-my-zsh.git
+        dest=/root/.oh-my-zsh
+
+    - name: Create a new zsh config
+      command: cp /root/.oh-my-zsh/templates/zshrc.zsh-template /root/.zshrc
+
+    - name: creates pathogen vim directories
+      file: path={{ item }} state=directory
+      with_items:
+       - /root/.vim/autoload
+       - /root/.vim/bundle
+       - /root/.vim/plugin
+
+    - name: install pathogen
+      shell: curl -LSso /root/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+    - name: install a.vim for alternate files quickly
+      get_url:
+        url=http://www.vim.org/scripts/download_script.php?src_id=7218
+        dest=/root/.vim/plugin/a.vim
+
+    - name: copy the vim configuration
+      copy:
+        src=roles/vim/files/vimrc
+        dest=/root/.vimrc
