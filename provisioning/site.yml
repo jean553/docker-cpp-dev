@@ -4,14 +4,13 @@
 
   tasks:
 
-    - name: install clang and SFML
+    - name: install clang and basic tools
       apt:
         name="{{ item }}"
         state=present
         update_cache=yes
       with_items:
         - clang
-        - libsfml-dev
         - vim
         - zsh
         - wget
@@ -19,6 +18,7 @@
         - curl
         - vim-syntastic
         - libc++-dev
+        - cmake
 
     - name: Clone oh-my-zsh repo
       git:
@@ -47,3 +47,9 @@
       copy:
         src=roles/vim/files/vimrc
         dest=/root/.vimrc
+
+    - name: set git email for configuration
+      shell: git config --global user.email "docker-cpp-dev@host.com"
+
+    - name: set git name for configuration
+      shell: git config --global user.name "docker-cpp-dev"
