@@ -2,6 +2,7 @@ filetype plugin on
 set paste
 set nocompatible
 syntax on
+color evening
 
 set tabstop=4
 set softtabstop=4
