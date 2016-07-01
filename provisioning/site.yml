@@ -19,6 +19,7 @@
         - vim-syntastic
         - libc++-dev
         - cmake
+        - astyle
 
     - name: Clone oh-my-zsh repo
       git:
