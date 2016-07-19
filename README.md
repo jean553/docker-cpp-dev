@@ -26,3 +26,19 @@ The container will be started.
 ```
 docker start memoris-dev
 ```
+
+## Connect to the container
+
+```
+docker exec -it memoris-dev /bin/zsh
+```
+
+## Compile Memoris
+
+Memoris can be compiled with CMake.
+
+```
+mkdir /Memoris/build && cd /Memoris/build
+cmake ..
+make
+```
