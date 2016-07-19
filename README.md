@@ -1,4 +1,4 @@
-# docker-cpp-dev
+# memoris-dev
 
 Memoris video game development container. Provision handled by Ansible.
 
@@ -16,7 +16,7 @@ This project does not contain the Memoris project. You have to clone it separate
 ## Create the container
 
 ```
-docker run --name memoris-docker -t -i -v {PATH_TO_THE_PROJECT}/Memoris:/Memoris jean553/docker-cpp-dev /bin/zsh
+docker run --name memoris-dev -t -i -v {PATH_TO_THE_PROJECT}/Memoris:/Memoris jean553/memoris-dev /bin/zsh
 ```
 
 The container will be started.
@@ -24,5 +24,5 @@ The container will be started.
 ## Start the container
 
 ```
-docker start memoris-docker
+docker start memoris-dev
 ```
