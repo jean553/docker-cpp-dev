@@ -44,6 +44,12 @@
         url=http://www.vim.org/scripts/download_script.php?src_id=7218
         dest=/root/.vim/plugin/a.vim
 
+    - name: install syntastic
+      git:
+        repo=https://github.com/scrooloose/syntastic.git
+        dest=/root/.vim/bundle
+        clone=yes
+
     - name: copy the vim configuration
       copy:
         src=roles/vim/files/vimrc
