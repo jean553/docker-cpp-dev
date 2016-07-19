@@ -47,7 +47,7 @@
     - name: install syntastic
       git:
         repo=https://github.com/scrooloose/syntastic.git
-        dest=/root/.vim/bundle
+        dest=/root/.vim/bundle/syntastic
         clone=yes
 
     - name: copy the vim configuration
