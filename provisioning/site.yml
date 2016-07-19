@@ -4,7 +4,7 @@
 
   tasks:
 
-    - name: install clang and basic tools
+    - name: install clang, SFML and basic tools
       apt:
         name="{{ item }}"
         state=present
@@ -16,10 +16,10 @@
         - wget
         - git
         - curl
-        - vim-syntastic
         - libc++-dev
         - cmake
         - astyle
+        - libsfml-dev
 
     - name: Clone oh-my-zsh repo
       git:
