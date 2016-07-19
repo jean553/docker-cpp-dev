@@ -1,7 +1,7 @@
 # vim:set ft=dockerfile
-FROM debian:jessie
+FROM ubuntu:trusty
 
-# install ansible (Debian version)
+# install ansible
 RUN apt-get update -y
 RUN apt-get install -y \
     python-dev \

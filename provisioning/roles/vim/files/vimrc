@@ -2,7 +2,22 @@ filetype plugin on
 set paste
 set nocompatible
 syntax on
-color evening
+autocmd BufRead *.js highlight BadWhitespace ctermbg=red guibg=red
+autocmd BufRead *.js match BadWhitespace /^\t\+/
+autocmd BufRead *.js match BadWhitespace /\s\+$/
+
+autocmd BufRead *.html highlight BadWhitespace ctermbg=red guibg=red
+autocmd BufRead *.html match BadWhitespace /^\t\+/
+autocmd BufRead *.html match BadWhitespace /\s\+$/
+
+autocmd BufRead *.cpp set autoindent
+autocmd BufRead *.h set autoindent
+
+autocmd BufRead *.md syntax=markdown
+highlight NobreakSpace ctermbg=red guibg=red
+match NobreakSpace / /
+
+autocmd BufRead,BufNewFile *.twig set filetype=htmljinja
 
 set tabstop=4
 set softtabstop=4
@@ -10,11 +25,18 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set smartindent
+set number
 set colorcolumn=80
+set laststatus=2
+set wildmode=longest,full
+set nobackup       "no backup file
+set nowritebackup  "only in case you don't want a backup file while editing
+set noswapfile     "no swap file
+set mouse=a
+set autochdir
+set showcmd
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+colorscheme torte
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -22,7 +44,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++ -Wall -Werror'
 let g:syntastic_cpp_check_header = 1
 
 execute pathogen#infect()
