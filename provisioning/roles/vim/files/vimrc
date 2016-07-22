@@ -2,22 +2,9 @@ filetype plugin on
 set paste
 set nocompatible
 syntax on
-autocmd BufRead *.js highlight BadWhitespace ctermbg=red guibg=red
-autocmd BufRead *.js match BadWhitespace /^\t\+/
-autocmd BufRead *.js match BadWhitespace /\s\+$/
-
-autocmd BufRead *.html highlight BadWhitespace ctermbg=red guibg=red
-autocmd BufRead *.html match BadWhitespace /^\t\+/
-autocmd BufRead *.html match BadWhitespace /\s\+$/
 
 autocmd BufRead *.cpp set autoindent
 autocmd BufRead *.h set autoindent
-
-autocmd BufRead *.md syntax=markdown
-highlight NobreakSpace ctermbg=red guibg=red
-match NobreakSpace / /
-
-autocmd BufRead,BufNewFile *.twig set filetype=htmljinja
 
 set tabstop=4
 set softtabstop=4
@@ -43,8 +30,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++ -Wall -Werror'
+let g:syntastic_cpp_compiler = 'clang++-3.5'
+let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++ -Wall -Werror'
 let g:syntastic_cpp_check_header = 1
 
 execute pathogen#infect()
