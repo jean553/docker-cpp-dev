@@ -5,7 +5,8 @@ Memoris video game development container. Provision handled by Ansible.
 ## Properties
 
 * Ubuntu 14.04 LTS (Trusty)
-* clang 3.4
+* clang 3.5 (for C++14 support)
+* g++ 4.9 (for C++14 support)
 * SFML 2.1
 * cmake 2.8
 * ZSH prompt (including oh-my-zsh)
