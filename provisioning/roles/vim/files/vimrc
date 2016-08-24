@@ -22,6 +22,8 @@ set noswapfile     "no swap file
 set mouse=a
 set autochdir
 set showcmd
+set cursorline
+set hlsearch
 
 colorscheme torte
 
