@@ -13,7 +13,10 @@ RUN pip install --upgrade cffi
 
 RUN pip install --upgrade \
     ansible \
-    setuptools
+    setuptools \
+    packaging \
+    pyparsing \
+    appdirs
 
 # copy the provisioning folder
 COPY provisioning/ provisioning
