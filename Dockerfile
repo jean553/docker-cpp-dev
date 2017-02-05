@@ -1,5 +1,5 @@
 # vim:set ft=dockerfile
-FROM ubuntu:trusty
+FROM debian:jessie
 
 # install ansible
 RUN apt-get update -y
@@ -8,8 +8,6 @@ RUN apt-get install -y \
     python-pip  \
     libffi-dev \
     libssl-dev
-
-RUN pip install --upgrade cffi
 
 RUN pip install --upgrade \
     ansible \
