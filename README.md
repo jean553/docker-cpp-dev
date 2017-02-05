@@ -4,7 +4,7 @@ Memoris video game development container. Provision handled by Ansible.
 
 ## Properties
 
-* Ubuntu 14.04 LTS (Trusty)
+* Debian 8 (Jessie)
 * clang 3.5 (for C++14 support)
 * g++ 4.9 (for C++14 support)
 * SFML 2.1
