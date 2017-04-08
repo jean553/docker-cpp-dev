@@ -19,7 +19,7 @@
         - cmake
         - astyle
         - libsfml-dev
-        - g++-4.9
+        - g++
 
     - name: Clone oh-my-zsh repo
       git:
