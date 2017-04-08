@@ -1,20 +1,18 @@
 # vim:set ft=dockerfile
-FROM debian:jessie
+FROM ubuntu:zesty
 
 # install ansible
 RUN apt-get update -y
 RUN apt-get install -y \
     python-dev \
-    python-pip  \
-    libffi-dev \
-    libssl-dev
+    python-pip \
+    libssl-dev \
+    libffi-dev
 
 RUN pip install --upgrade \
-    ansible \
-    setuptools \
+    appdirs \
     packaging \
-    pyparsing \
-    appdirs
+    ansible
 
 # copy the provisioning folder
 COPY provisioning/ provisioning
