@@ -4,11 +4,10 @@ Memoris video game development container. Provision handled by Ansible.
 
 ## Properties
 
-* Debian 8 (Jessie)
-* clang 3.5 (for C++14 support)
+* Ubuntu 17.04 (Zesty)
 * g++ 4.9 (for C++14 support)
-* SFML 2.1
-* cmake 2.8
+* SFML 2.4.2
+* cmake 3.7.2
 * ZSH prompt (including oh-my-zsh)
 * VIM profile optimized for C++11/14 edition
 
